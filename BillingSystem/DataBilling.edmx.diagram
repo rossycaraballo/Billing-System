@@ -4,8 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9427f7c011e84fce93f2f2ecdd310f3a" Name="Diagram1" >
-        <EntityTypeShape EntityType="BillingDb.Client" Width="1.5" PointX="2.375" PointY="1" />
+      <Diagram DiagramId="1d00971d4b9f4f0ba4549c0f0a7d6f82" Name="Diagram1" >
+        <EntityTypeShape EntityType="BillingDbModel.Cliente" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="BillingDbModel.TipoDocumento" Width="1.5" PointX="0.75" PointY="1.375" />
+        <AssociationConnector Association="BillingDbModel.FK_Clientes_TipoDocumento" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

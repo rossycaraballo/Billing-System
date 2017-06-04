@@ -29,10 +29,7 @@ namespace BillingSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BillingDbContainer db = new BillingDbContainer();
-
-            db.Clients.Add(new Client { Nombre = "Brayan mi unico muah" });
-            db.SaveChanges();
+         
 
            
         }

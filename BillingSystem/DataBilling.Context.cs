@@ -13,10 +13,10 @@ namespace BillingSystem
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BillingDbContainer : DbContext
+    public partial class BillingDbEntities : DbContext
     {
-        public BillingDbContainer()
-            : base("name=BillingDbContainer")
+        public BillingDbEntities()
+            : base("name=BillingDbEntities")
         {
         }
     
@@ -25,6 +25,7 @@ namespace BillingSystem
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<TipoDocumento> TipoDocumentoes { get; set; }
     }
 }
