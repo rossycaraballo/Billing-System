@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BillingSystem
 {
-    public partial class Login : Form
+    public partial class Login : MetroFramework.Forms.MetroForm
     {
         public Login()
         {
@@ -32,6 +32,11 @@ namespace BillingSystem
          
 
            
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
