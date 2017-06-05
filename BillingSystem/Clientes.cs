@@ -37,9 +37,19 @@ namespace BillingSystem
         private void metroTile3_Click(object sender, EventArgs e)
         {
 
+
+
         }
 
-        private async void metroTile2_Click(object sender, EventArgs e)
+
+        private void updateClienteGrid() {
+            Cursor.Current = Cursors.WaitCursor;
+            clienteBindingSource.DataSource = db.Clientes.ToList();
+            tipoDocumentoGridCombo.DataSource = db.TipoDocumentoes.ToList();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private  void metroTile2_Click(object sender, EventArgs e)
         {
             using (var fromAgregar = new frmAgregarClientes(new Cliente()))
             {
@@ -47,9 +57,11 @@ namespace BillingSystem
                 {
                     try
                     {
-                        clienteBindingSource.Add(fromAgregar.ClienteCurrent);
+                        //clienteBindingSource.Add(fromAgregar.ClienteCurrent);
                         db.Clientes.Add(fromAgregar.ClienteCurrent);
-                        await db.SaveChangesAsync();
+                        db.SaveChanges();
+
+
                     }
                     catch (Exception ex)
                     {
@@ -62,6 +74,8 @@ namespace BillingSystem
 
 
                 }
+
+                updateClienteGrid();
             }
         }
     }
