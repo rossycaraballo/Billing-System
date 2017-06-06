@@ -34,17 +34,18 @@
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.GridClientes = new System.Windows.Forms.DataGridView();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tipoDocumentoGridCombo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.savechanges = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -102,14 +103,6 @@
             this.GridClientes.Size = new System.Drawing.Size(695, 259);
             this.GridClientes.TabIndex = 4;
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(BillingSystem.Cliente);
-            // 
-            // tipoDocumentoBindingSource
-            // 
-            this.tipoDocumentoBindingSource.DataSource = typeof(BillingSystem.TipoDocumento);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -151,11 +144,29 @@
             this.tipoDocumentoGridCombo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.tipoDocumentoGridCombo.ValueMember = "Id";
             // 
+            // tipoDocumentoBindingSource
+            // 
+            this.tipoDocumentoBindingSource.DataSource = typeof(BillingSystem.TipoDocumento);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(BillingSystem.Cliente);
+            // 
+            // savechanges
+            // 
+            this.savechanges.Location = new System.Drawing.Point(495, 75);
+            this.savechanges.Name = "savechanges";
+            this.savechanges.Size = new System.Drawing.Size(117, 62);
+            this.savechanges.TabIndex = 5;
+            this.savechanges.Text = "Guardar cambios";
+            this.savechanges.Click += new System.EventHandler(this.metroTile5_Click);
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 454);
+            this.Controls.Add(this.savechanges);
             this.Controls.Add(this.GridClientes);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile3);
@@ -166,8 +177,8 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,5 +198,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn tipoDocumentoGridCombo;
         private System.Windows.Forms.BindingSource tipoDocumentoBindingSource;
+        private MetroFramework.Controls.MetroTile savechanges;
     }
 }

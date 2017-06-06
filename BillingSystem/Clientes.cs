@@ -12,18 +12,20 @@ namespace BillingSystem
 {
     public partial class Clientes : MetroFramework.Forms.MetroForm
     {
-        private readonly BillingDbEntities db;
+        private BillingDbEntities db;
 
         public Clientes()
         {
-            db = new BillingDbEntities();
+
             InitializeComponent();
         }
 
         private void Clientes_Load(object sender, EventArgs e)
         {
+            db = new BillingDbEntities();
             clienteBindingSource.DataSource = db.Clientes.ToList();
             tipoDocumentoGridCombo.DataSource = db.TipoDocumentoes.ToList();
+
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -42,41 +44,65 @@ namespace BillingSystem
         }
 
 
-        private void updateClienteGrid() {
+        private void updateClienteGrid()
+        {
             Cursor.Current = Cursors.WaitCursor;
             clienteBindingSource.DataSource = db.Clientes.ToList();
             tipoDocumentoGridCombo.DataSource = db.TipoDocumentoes.ToList();
             Cursor.Current = Cursors.Default;
         }
 
-        private  void metroTile2_Click(object sender, EventArgs e)
+        private async void metroTile2_Click(object sender, EventArgs e)
         {
-            using (var fromAgregar = new frmAgregarClientes(new Cliente()))
+            var fromAgregar = new frmAgregarClientes(new Cliente());
+
+            //using (var fromAgregar = new frmAgregarClientes(new Cliente()))
+            //{
+            if (fromAgregar.ShowDialog() == DialogResult.OK)
             {
-                if (fromAgregar.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    try
+
+                    using (var transaction = db.Database.BeginTransaction())
                     {
-                        //clienteBindingSource.Add(fromAgregar.ClienteCurrent);
+                        clienteBindingSource.Add(fromAgregar.ClienteCurrent);
                         db.Clientes.Add(fromAgregar.ClienteCurrent);
-                        db.SaveChanges();
 
+                        await db.SaveChangesAsync();
 
+                        transaction.Commit();
                     }
-                    catch (Exception ex)
-                    {
+                    //await db.Database.Connection.OpenAsync();
 
-                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                 
+
+
+                    // db.Database.Connection.Close();
+
+
+
                 }
-                else
+                catch (Exception ex)
                 {
 
-
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                updateClienteGrid();
             }
+            else
+            {
+
+
+            }
+
+            updateClienteGrid();
+            // }
+        }
+
+        private async void metroTile5_Click(object sender, EventArgs e)
+        {
+            clienteBindingSource.EndEdit();
+            await db.SaveChangesAsync();
+
         }
     }
 }

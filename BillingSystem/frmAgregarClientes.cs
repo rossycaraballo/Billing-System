@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,7 @@ namespace BillingSystem
             using (var db = new BillingDbEntities())
             {
                 tipoDocumentoCombobox.DataSource = db.TipoDocumentoes.ToList();
-               
+
             }
         }
 
@@ -46,8 +47,10 @@ namespace BillingSystem
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
+        
+
             bindingCliente.EndEdit();
             DialogResult = DialogResult.OK;
         }
