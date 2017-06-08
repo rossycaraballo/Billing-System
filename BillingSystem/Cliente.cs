@@ -11,7 +11,8 @@ namespace BillingSystem
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Cliente
     {
         public int Id { get; set; }
@@ -20,7 +21,9 @@ namespace BillingSystem
         public string Cuenta { get; set; }
         public bool Estado { get; set; }
         public int IdTipoDocumento { get; set; }
-    
+
+        [ForeignKey("IdTipoDocumento")]
+
         public virtual TipoDocumento TipoDocumento { get; set; }
     }
 }

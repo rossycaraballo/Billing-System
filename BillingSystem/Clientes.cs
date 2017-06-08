@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BillingSystem.DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace BillingSystem
 {
     public partial class Clientes : MetroFramework.Forms.MetroForm
     {
-        private BillingDbEntities db;
+        private BillingContext db;
 
         public Clientes()
         {
@@ -22,9 +23,9 @@ namespace BillingSystem
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            db = new BillingDbEntities();
+            db = new BillingContext();
             clienteBindingSource.DataSource = db.Clientes.ToList();
-            tipoDocumentoGridCombo.DataSource = db.TipoDocumentoes.ToList();
+            tipoDocumentoGridCombo.DataSource = db.TipoDocumentos.ToList();
 
         }
 
@@ -32,7 +33,7 @@ namespace BillingSystem
         {
             Cursor.Current = Cursors.WaitCursor;
             clienteBindingSource.DataSource = db.Clientes.ToList();
-            tipoDocumentoGridCombo.DataSource = db.TipoDocumentoes.ToList();
+            tipoDocumentoGridCombo.DataSource = db.TipoDocumentos.ToList();
             Cursor.Current = Cursors.Default;
         }
 
@@ -48,7 +49,7 @@ namespace BillingSystem
         {
             Cursor.Current = Cursors.WaitCursor;
             clienteBindingSource.DataSource = db.Clientes.ToList();
-            tipoDocumentoGridCombo.DataSource = db.TipoDocumentoes.ToList();
+            tipoDocumentoGridCombo.DataSource = db.TipoDocumentos.ToList();
             Cursor.Current = Cursors.Default;
         }
 
@@ -67,7 +68,7 @@ namespace BillingSystem
                     {
                         clienteBindingSource.Add(fromAgregar.ClienteCurrent);
                         db.Clientes.Add(fromAgregar.ClienteCurrent);
-
+                        clienteBindingSource.EndEdit();
                         await db.SaveChangesAsync();
 
                         transaction.Commit();
