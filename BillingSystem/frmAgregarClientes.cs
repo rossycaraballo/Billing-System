@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BillingSystem.DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,9 +36,9 @@ namespace BillingSystem
             tipoDocumentoCombobox.DisplayMember = "Tipo";
             tipoDocumentoCombobox.ValueMember = "Id";
 
-            using (var db = new BillingDbEntities())
+            using (var db = new BillingContext())
             {
-                tipoDocumentoCombobox.DataSource = db.TipoDocumentoes.ToList();
+                tipoDocumentoCombobox.DataSource = db.TipoDocumentos.ToList();
 
             }
         }
