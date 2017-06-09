@@ -31,7 +31,6 @@ namespace BillingSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.btnModificarCliente = new MetroFramework.Controls.MetroTile();
             this.btnBorrar = new MetroFramework.Controls.MetroTile();
@@ -49,38 +48,32 @@ namespace BillingSystem
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroTile1
-            // 
-            this.metroTile1.Location = new System.Drawing.Point(34, 75);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(91, 62);
-            this.metroTile1.TabIndex = 0;
-            this.metroTile1.Text = "Actualizar";
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
-            // 
             // metroTile2
             // 
-            this.metroTile2.Location = new System.Drawing.Point(148, 75);
+            this.metroTile2.Location = new System.Drawing.Point(45, 93);
+            this.metroTile2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(91, 62);
+            this.metroTile2.Size = new System.Drawing.Size(121, 76);
             this.metroTile2.TabIndex = 1;
             this.metroTile2.Text = "Agregar";
             this.metroTile2.Click += new System.EventHandler(this.AgregarCliente_click);
             // 
             // btnModificarCliente
             // 
-            this.btnModificarCliente.Location = new System.Drawing.Point(265, 75);
+            this.btnModificarCliente.Location = new System.Drawing.Point(201, 93);
+            this.btnModificarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificarCliente.Name = "btnModificarCliente";
-            this.btnModificarCliente.Size = new System.Drawing.Size(91, 62);
+            this.btnModificarCliente.Size = new System.Drawing.Size(121, 76);
             this.btnModificarCliente.TabIndex = 2;
             this.btnModificarCliente.Text = "Modificar";
             this.btnModificarCliente.Click += new System.EventHandler(this.btnModificarCliente_Click);
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(381, 75);
+            this.btnBorrar.Location = new System.Drawing.Point(356, 93);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(91, 62);
+            this.btnBorrar.Size = new System.Drawing.Size(121, 76);
             this.btnBorrar.TabIndex = 3;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
@@ -100,9 +93,10 @@ namespace BillingSystem
             this.estadoDataGridViewCheckBoxColumn,
             this.tipoDocumentoGridCombo});
             this.GridClientes.DataSource = this.clienteBindingSource;
-            this.GridClientes.Location = new System.Drawing.Point(34, 156);
+            this.GridClientes.Location = new System.Drawing.Point(45, 192);
+            this.GridClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GridClientes.Name = "GridClientes";
-            this.GridClientes.Size = new System.Drawing.Size(695, 259);
+            this.GridClientes.Size = new System.Drawing.Size(927, 319);
             this.GridClientes.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
@@ -156,15 +150,16 @@ namespace BillingSystem
             // 
             // Clientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 454);
+            this.ClientSize = new System.Drawing.Size(1020, 559);
             this.Controls.Add(this.GridClientes);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificarCliente);
             this.Controls.Add(this.metroTile2);
-            this.Controls.Add(this.metroTile1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Clientes";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Clientes";
             this.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Load += new System.EventHandler(this.Clientes_Load);
@@ -176,8 +171,6 @@ namespace BillingSystem
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile btnModificarCliente;
         private MetroFramework.Controls.MetroTile btnBorrar;
