@@ -44,7 +44,6 @@ namespace BillingSystem
             this.tipoDocumentoGridCombo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.savechanges = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.GridClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
@@ -52,36 +51,40 @@ namespace BillingSystem
             // 
             // metroTile1
             // 
-            this.metroTile1.Location = new System.Drawing.Point(34, 75);
+            this.metroTile1.Location = new System.Drawing.Point(45, 92);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(91, 62);
+            this.metroTile1.Size = new System.Drawing.Size(121, 76);
             this.metroTile1.TabIndex = 0;
             this.metroTile1.Text = "Actualizar";
             this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
             // metroTile2
             // 
-            this.metroTile2.Location = new System.Drawing.Point(148, 75);
+            this.metroTile2.Location = new System.Drawing.Point(197, 92);
+            this.metroTile2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(91, 62);
+            this.metroTile2.Size = new System.Drawing.Size(121, 76);
             this.metroTile2.TabIndex = 1;
             this.metroTile2.Text = "Agregar";
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // metroTile3
             // 
-            this.metroTile3.Location = new System.Drawing.Point(265, 75);
+            this.metroTile3.Location = new System.Drawing.Point(353, 92);
+            this.metroTile3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(91, 62);
+            this.metroTile3.Size = new System.Drawing.Size(121, 76);
             this.metroTile3.TabIndex = 2;
             this.metroTile3.Text = "Modificar";
             this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
             // metroTile4
             // 
-            this.metroTile4.Location = new System.Drawing.Point(381, 75);
+            this.metroTile4.Location = new System.Drawing.Point(508, 92);
+            this.metroTile4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(91, 62);
+            this.metroTile4.Size = new System.Drawing.Size(121, 76);
             this.metroTile4.TabIndex = 3;
             this.metroTile4.Text = "Borrar";
             // 
@@ -100,9 +103,10 @@ namespace BillingSystem
             this.estadoDataGridViewCheckBoxColumn,
             this.tipoDocumentoGridCombo});
             this.GridClientes.DataSource = this.clienteBindingSource;
-            this.GridClientes.Location = new System.Drawing.Point(34, 156);
+            this.GridClientes.Location = new System.Drawing.Point(45, 192);
+            this.GridClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GridClientes.Name = "GridClientes";
-            this.GridClientes.Size = new System.Drawing.Size(695, 259);
+            this.GridClientes.Size = new System.Drawing.Size(927, 319);
             this.GridClientes.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
@@ -148,33 +152,25 @@ namespace BillingSystem
             // 
             // tipoDocumentoBindingSource
             // 
-            this.tipoDocumentoBindingSource.DataSource = typeof(TipoDocumento);
+            this.tipoDocumentoBindingSource.DataSource = typeof(BillingSystem.Modelos.TipoDocumento);
             // 
             // clienteBindingSource
             // 
-            this.clienteBindingSource.DataSource = typeof(Cliente);
-            // 
-            // savechanges
-            // 
-            this.savechanges.Location = new System.Drawing.Point(495, 75);
-            this.savechanges.Name = "savechanges";
-            this.savechanges.Size = new System.Drawing.Size(117, 62);
-            this.savechanges.TabIndex = 5;
-            this.savechanges.Text = "Guardar cambios";
-            this.savechanges.Click += new System.EventHandler(this.metroTile5_Click);
+            this.clienteBindingSource.DataSource = typeof(BillingSystem.Modelos.Cliente);
             // 
             // Clientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 454);
-            this.Controls.Add(this.savechanges);
+            this.ClientSize = new System.Drawing.Size(1020, 559);
             this.Controls.Add(this.GridClientes);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Clientes";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Clientes";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Clientes_Load);
@@ -200,6 +196,5 @@ namespace BillingSystem
         private System.Windows.Forms.DataGridViewCheckBoxColumn estadoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn tipoDocumentoGridCombo;
         private System.Windows.Forms.BindingSource tipoDocumentoBindingSource;
-        private MetroFramework.Controls.MetroTile savechanges;
     }
 }
