@@ -1,4 +1,6 @@
-﻿namespace BillingSystem
+﻿using BillingSystem.Modelos;
+
+namespace BillingSystem
 {
     partial class frmAgregarClientes
     {
@@ -150,11 +152,11 @@
             // 
             // bindingCliente
             // 
-            this.bindingCliente.DataSource = typeof(BillingSystem.Cliente);
+            this.bindingCliente.DataSource = typeof(Cliente);
             // 
             // tipoDocumentoBindingSource
             // 
-            this.tipoDocumentoBindingSource.DataSource = typeof(BillingSystem.TipoDocumento);
+            this.tipoDocumentoBindingSource.DataSource = typeof(TipoDocumento);
             // 
             // frmAgregarClientes
             // 

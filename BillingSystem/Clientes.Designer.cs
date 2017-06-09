@@ -1,4 +1,6 @@
-﻿namespace BillingSystem
+﻿using BillingSystem.Modelos;
+
+namespace BillingSystem
 {
     partial class Clientes
     {
@@ -146,11 +148,11 @@
             // 
             // tipoDocumentoBindingSource
             // 
-            this.tipoDocumentoBindingSource.DataSource = typeof(BillingSystem.TipoDocumento);
+            this.tipoDocumentoBindingSource.DataSource = typeof(TipoDocumento);
             // 
             // clienteBindingSource
             // 
-            this.clienteBindingSource.DataSource = typeof(BillingSystem.Cliente);
+            this.clienteBindingSource.DataSource = typeof(Cliente);
             // 
             // savechanges
             // 
