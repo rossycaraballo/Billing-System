@@ -116,6 +116,12 @@
     <Compile Include="Modelos\Productos.cs" />
     <Compile Include="Modelos\TipoDocumento.cs" />
     <Compile Include="Modelos\Vendedor.cs" />
+    <Compile Include="ProductoMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductoMain.Designer.cs">
+      <DependentUpon>ProductoMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Clientes.resx">
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706090037440_INitialDatabase.resx">
       <DependentUpon>201706090037440_INitialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductoMain.resx">
+      <DependentUpon>ProductoMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

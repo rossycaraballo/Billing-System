@@ -14,6 +14,7 @@ namespace BillingSystem.DataBase
         public BillingContext()
             : base("name=Default")
         {
+            
 
             AppDomain.CurrentDomain.SetData("DataDirectory", Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
         }

@@ -33,6 +33,7 @@ namespace BillingSystem
             this.components = new System.ComponentModel.Container();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
+            this.bindingCliente = new System.Windows.Forms.BindingSource(this.components);
             this.txtDocumento = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -42,7 +43,6 @@ namespace BillingSystem
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.checkEstado = new MetroFramework.Controls.MetroCheckBox();
-            this.bindingCliente = new System.Windows.Forms.BindingSource(this.components);
             this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
@@ -65,6 +65,10 @@ namespace BillingSystem
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(208, 23);
             this.txtNombre.TabIndex = 1;
+            // 
+            // bindingCliente
+            // 
+            this.bindingCliente.DataSource = typeof(BillingSystem.Modelos.Cliente);
             // 
             // txtDocumento
             // 
@@ -150,13 +154,9 @@ namespace BillingSystem
             this.checkEstado.Text = "?";
             this.checkEstado.UseVisualStyleBackColor = true;
             // 
-            // bindingCliente
-            // 
-            this.bindingCliente.DataSource = typeof(Cliente);
-            // 
             // tipoDocumentoBindingSource
             // 
-            this.tipoDocumentoBindingSource.DataSource = typeof(TipoDocumento);
+            this.tipoDocumentoBindingSource.DataSource = typeof(BillingSystem.Modelos.TipoDocumento);
             // 
             // frmAgregarClientes
             // 
@@ -178,7 +178,7 @@ namespace BillingSystem
             this.MaximizeBox = false;
             this.Name = "frmAgregarClientes";
             this.Text = "Agregar cliente";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Load += new System.EventHandler(this.frmAgregarClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).EndInit();
