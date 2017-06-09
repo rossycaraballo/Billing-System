@@ -16,7 +16,7 @@ namespace BillingSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductoMain());
+            Application.Run(new VendedoresMain());
         }
     }
 }

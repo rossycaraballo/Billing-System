@@ -116,11 +116,23 @@
     <Compile Include="Modelos\Productos.cs" />
     <Compile Include="Modelos\TipoDocumento.cs" />
     <Compile Include="Modelos\Vendedor.cs" />
+    <Compile Include="VendedorAddOrEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendedorAddOrEdit.Designer.cs">
+      <DependentUpon>VendedorAddOrEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductoAddOrEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductoAddOrEdit.Designer.cs">
       <DependentUpon>ProductoAddOrEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendedoresMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendedoresMain.Designer.cs">
+      <DependentUpon>VendedoresMain.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductoMain.cs">
       <SubType>Form</SubType>
@@ -145,8 +157,14 @@
     <EmbeddedResource Include="Migrations\201706090037440_INitialDatabase.resx">
       <DependentUpon>201706090037440_INitialDatabase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VendedorAddOrEdit.resx">
+      <DependentUpon>VendedorAddOrEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductoAddOrEdit.resx">
       <DependentUpon>ProductoAddOrEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendedoresMain.resx">
+      <DependentUpon>VendedoresMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductoMain.resx">
       <DependentUpon>ProductoMain.cs</DependentUpon>
@@ -163,6 +181,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BillingSystem.Modelos.Producto.datasource" />
+    <None Include="Properties\DataSources\BillingSystem.Modelos.Vendedor.datasource" />
     <None Include="Properties\DataSources\Cliente.datasource" />
     <None Include="Properties\DataSources\TipoDocumento.datasource" />
     <None Include="Properties\Settings.settings">
