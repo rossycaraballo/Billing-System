@@ -46,7 +46,16 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.txtComentario = new MetroFramework.Controls.MetroTextBox();
+            this.panelCondicionesPago = new MetroFramework.Controls.MetroPanel();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.txtDescripcion = new MetroFramework.Controls.MetroTextBox();
+            this.bindingSourceCondicicionesPago = new System.Windows.Forms.BindingSource(this.components);
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.txtCantidadDias = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.BindingFactura)).BeginInit();
+            this.panelCondicionesPago.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCondicicionesPago)).BeginInit();
             this.SuspendLayout();
             // 
             // FormaPagoCombobox
@@ -60,6 +69,7 @@
             this.FormaPagoCombobox.Style = MetroFramework.MetroColorStyle.Blue;
             this.FormaPagoCombobox.TabIndex = 7;
             this.FormaPagoCombobox.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.FormaPagoCombobox.SelectedIndexChanged += new System.EventHandler(this.FormaPagoCombobox_SelectedIndexChanged);
             // 
             // BindingFactura
             // 
@@ -85,6 +95,7 @@
             this.VendedorCombobox.Style = MetroFramework.MetroColorStyle.Blue;
             this.VendedorCombobox.TabIndex = 9;
             this.VendedorCombobox.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.VendedorCombobox.SelectedIndexChanged += new System.EventHandler(this.VendedorCombobox_SelectedIndexChanged);
             // 
             // metroLabel1
             // 
@@ -106,6 +117,7 @@
             this.ClienteComboBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.ClienteComboBox.TabIndex = 11;
             this.ClienteComboBox.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ClienteComboBox.SelectedIndexChanged += new System.EventHandler(this.ClienteComboBox_SelectedIndexChanged);
             // 
             // metroLabel2
             // 
@@ -136,6 +148,7 @@
             this.ProductoComboBox.Style = MetroFramework.MetroColorStyle.Blue;
             this.ProductoComboBox.TabIndex = 16;
             this.ProductoComboBox.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.ProductoComboBox.SelectedIndexChanged += new System.EventHandler(this.ProductoComboBox_SelectedIndexChanged);
             // 
             // metroLabel5
             // 
@@ -183,7 +196,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(23, 542);
+            this.metroButton1.Location = new System.Drawing.Point(35, 463);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(120, 44);
             this.metroButton1.TabIndex = 22;
@@ -191,7 +204,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(363, 542);
+            this.btnSave.Location = new System.Drawing.Point(643, 463);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 44);
             this.btnSave.TabIndex = 21;
@@ -206,11 +219,78 @@
             this.txtComentario.Size = new System.Drawing.Size(208, 23);
             this.txtComentario.TabIndex = 23;
             // 
+            // panelCondicionesPago
+            // 
+            this.panelCondicionesPago.Controls.Add(this.metroTile1);
+            this.panelCondicionesPago.Controls.Add(this.txtDescripcion);
+            this.panelCondicionesPago.Controls.Add(this.metroLabel8);
+            this.panelCondicionesPago.Controls.Add(this.txtCantidadDias);
+            this.panelCondicionesPago.Controls.Add(this.metroLabel7);
+            this.panelCondicionesPago.HorizontalScrollbarBarColor = true;
+            this.panelCondicionesPago.HorizontalScrollbarHighlightOnWheel = false;
+            this.panelCondicionesPago.HorizontalScrollbarSize = 10;
+            this.panelCondicionesPago.Location = new System.Drawing.Point(417, 106);
+            this.panelCondicionesPago.Name = "panelCondicionesPago";
+            this.panelCondicionesPago.Size = new System.Drawing.Size(346, 311);
+            this.panelCondicionesPago.TabIndex = 24;
+            this.panelCondicionesPago.VerticalScrollbarBarColor = true;
+            this.panelCondicionesPago.VerticalScrollbarHighlightOnWheel = false;
+            this.panelCondicionesPago.VerticalScrollbarSize = 10;
+            this.panelCondicionesPago.Paint += new System.Windows.Forms.PaintEventHandler(this.metroPanel1_Paint);
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.Location = new System.Drawing.Point(6, 5);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(326, 59);
+            this.metroTile1.TabIndex = 29;
+            this.metroTile1.Text = "Condiciones de Pagos";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCondicicionesPago, "Descripcion", true));
+            this.txtDescripcion.Location = new System.Drawing.Point(124, 131);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(208, 23);
+            this.txtDescripcion.TabIndex = 28;
+            // 
+            // bindingSourceCondicicionesPago
+            // 
+            this.bindingSourceCondicicionesPago.DataSource = typeof(BillingSystem.Modelos.CondicionesPago);
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(6, 132);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel8.TabIndex = 27;
+            this.metroLabel8.Text = "Descripcion:";
+            // 
+            // txtCantidadDias
+            // 
+            this.txtCantidadDias.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCondicicionesPago, "CantidadDias", true));
+            this.txtCantidadDias.Location = new System.Drawing.Point(124, 86);
+            this.txtCantidadDias.Name = "txtCantidadDias";
+            this.txtCantidadDias.Size = new System.Drawing.Size(208, 23);
+            this.txtCantidadDias.TabIndex = 26;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(6, 87);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(111, 19);
+            this.metroLabel7.TabIndex = 25;
+            this.metroLabel7.Text = "Cantidad de dias:";
+            // 
             // AgregarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 631);
+            this.ClientSize = new System.Drawing.Size(775, 518);
+            this.Controls.Add(this.panelCondicionesPago);
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnSave);
@@ -231,6 +311,9 @@
             this.Text = "AgregarFactura";
             this.Load += new System.EventHandler(this.AgregarFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BindingFactura)).EndInit();
+            this.panelCondicionesPago.ResumeLayout(false);
+            this.panelCondicionesPago.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCondicicionesPago)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +338,12 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton btnSave;
         private MetroFramework.Controls.MetroTextBox txtComentario;
+        private MetroFramework.Controls.MetroPanel panelCondicionesPago;
+        private MetroFramework.Controls.MetroTextBox txtDescripcion;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroTextBox txtCantidadDias;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private System.Windows.Forms.BindingSource bindingSourceCondicicionesPago;
     }
 }

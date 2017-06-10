@@ -100,7 +100,7 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(27, 89);
+            this.btnCrear.Location = new System.Drawing.Point(27, 101);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(96, 62);
             this.btnCrear.TabIndex = 2;

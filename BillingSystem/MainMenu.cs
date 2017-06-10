@@ -68,9 +68,18 @@ namespace BillingSystem
                     {
                         fromAgregar.FacturaCurrent.Fecha = DateTime.Now;
 
-                      //  facturasBindingSource.Add(fromAgregar.FacturaCurrent);
-                        db.Factura.Add(fromAgregar.FacturaCurrent);
-                      //  facturasBindingSource.EndEdit();
+                        //  facturasBindingSource.Add(fromAgregar.FacturaCurrent);
+                        var facturaGuardada = db.Factura.Add(fromAgregar.FacturaCurrent);
+
+                        if (fromAgregar.CondicionesPago != null && fromAgregar.CondicionesPago.CantidadDias > 0)
+                        {
+                            fromAgregar.CondicionesPago.IdEstadoPago = 1;
+                            fromAgregar.CondicionesPago.IdFactura = facturaGuardada.Id;
+
+                            db.CondicionesPago.Add(fromAgregar.CondicionesPago);
+                        }
+
+                        //  facturasBindingSource.EndEdit();
 
                         await db.SaveChangesAsync();
 
@@ -84,7 +93,7 @@ namespace BillingSystem
 
             }
 
-             updateFacturaGrid();
+            updateFacturaGrid();
         }
 
 
@@ -94,7 +103,7 @@ namespace BillingSystem
         {
             Cursor.Current = Cursors.WaitCursor;
             facturasBindingSource.DataSource = db.Factura.ToList();
-            
+
             Cursor.Current = Cursors.Default;
         }
 

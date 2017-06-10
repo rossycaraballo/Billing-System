@@ -215,6 +215,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BillingSystem.Modelos.Cliente.datasource" />
+    <None Include="Properties\DataSources\BillingSystem.Modelos.CondicionesPago.datasource" />
     <None Include="Properties\DataSources\BillingSystem.Modelos.Factura.datasource" />
     <None Include="Properties\DataSources\BillingSystem.Modelos.FormaPago.datasource" />
     <None Include="Properties\DataSources\BillingSystem.Modelos.Producto.datasource" />
