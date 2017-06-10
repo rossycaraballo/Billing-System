@@ -38,5 +38,21 @@ namespace BillingSystem
         {
 
         }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+            MainMenu frm = new MainMenu();
+            frm.ShowDialog();
+        }
     }
 }
