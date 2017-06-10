@@ -30,22 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.FormaPagoCombobox = new MetroFramework.Controls.MetroComboBox();
+            this.BindingFactura = new System.Windows.Forms.BindingSource(this.components);
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.VendedorCombobox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.ClienteComboBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.ProductoComboBox = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.txtCantidad = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.txtPrecio = new MetroFramework.Controls.MetroTextBox();
             this.lblPrecio = new MetroFramework.Controls.MetroLabel();
-            this.BindingFactura = new System.Windows.Forms.BindingSource(this.components);
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.btnSave = new MetroFramework.Controls.MetroButton();
+            this.txtComentario = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.BindingFactura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,10 @@
             this.FormaPagoCombobox.Style = MetroFramework.MetroColorStyle.Blue;
             this.FormaPagoCombobox.TabIndex = 7;
             this.FormaPagoCombobox.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // BindingFactura
+            // 
+            this.BindingFactura.DataSource = typeof(BillingSystem.Modelos.Factura);
             // 
             // metroLabel3
             // 
@@ -121,15 +125,6 @@
             this.metroLabel4.TabIndex = 12;
             this.metroLabel4.Text = "Comentario:";
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingFactura, "Comentario", true));
-            this.richTextBox1.Location = new System.Drawing.Point(160, 394);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(267, 121);
-            this.richTextBox1.TabIndex = 14;
-            this.richTextBox1.Text = "";
-            // 
             // ProductoComboBox
             // 
             this.ProductoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.BindingFactura, "IdProducto", true));
@@ -186,10 +181,6 @@
             this.lblPrecio.TabIndex = 19;
             this.lblPrecio.Text = "Precio:";
             // 
-            // BindingFactura
-            // 
-            this.BindingFactura.DataSource = typeof(BillingSystem.Modelos.Factura);
-            // 
             // metroButton1
             // 
             this.metroButton1.Location = new System.Drawing.Point(23, 542);
@@ -205,12 +196,22 @@
             this.btnSave.Size = new System.Drawing.Size(120, 44);
             this.btnSave.TabIndex = 21;
             this.btnSave.Text = "Guardar";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtComentario
+            // 
+            this.txtComentario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingFactura, "Comentario", true));
+            this.txtComentario.Location = new System.Drawing.Point(160, 394);
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(208, 23);
+            this.txtComentario.TabIndex = 23;
             // 
             // AgregarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 631);
+            this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtPrecio);
@@ -219,7 +220,6 @@
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.ProductoComboBox);
             this.Controls.Add(this.metroLabel5);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.ClienteComboBox);
             this.Controls.Add(this.metroLabel2);
@@ -245,7 +245,6 @@
         private MetroFramework.Controls.MetroComboBox ClienteComboBox;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private MetroFramework.Controls.MetroComboBox ProductoComboBox;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroTextBox txtCantidad;
@@ -255,5 +254,6 @@
         private System.Windows.Forms.BindingSource BindingFactura;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton btnSave;
+        private MetroFramework.Controls.MetroTextBox txtComentario;
     }
 }

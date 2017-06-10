@@ -62,5 +62,10 @@ namespace BillingSystem
             this.Close();
             
         }
+
+        private void tipoDocumentoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

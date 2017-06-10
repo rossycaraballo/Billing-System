@@ -86,6 +86,11 @@
     <Compile Include="AgregarFactura.Designer.cs">
       <DependentUpon>AgregarFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="BillingDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BillingDbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,7 +202,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="BillingDbDataSet.xsc">
+      <DependentUpon>BillingDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BillingDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BillingDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BillingDbDataSet.xss">
+      <DependentUpon>BillingDbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BillingSystem.Modelos.Cliente.datasource" />
     <None Include="Properties\DataSources\BillingSystem.Modelos.Factura.datasource" />
     <None Include="Properties\DataSources\BillingSystem.Modelos.FormaPago.datasource" />
     <None Include="Properties\DataSources\BillingSystem.Modelos.Producto.datasource" />

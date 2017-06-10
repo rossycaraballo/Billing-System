@@ -22,5 +22,16 @@ namespace BillingSystem.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=BillingDb;Integrated Security=" +
+            "True")]
+        public string BillingDbConnectionString {
+            get {
+                return ((string)(this["BillingDbConnectionString"]));
+            }
+        }
     }
 }
